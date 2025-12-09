@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PV | Programación Venustiano</title>
+    <meta name="description" content="Diseño web y soluciones digitales en Venustiano Carranza. Especialista UX Certificado por Google.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes: 'Outfit' (Tech/Moderno) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Paleta PV (Más eléctrica para móviles) */
+            --neon-blue: #00f3ff;
+            --neon-violet: #9d00ff;
+            --bg-dark: #050505;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            /* Fondo dinámico sutil */
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(157, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(0, 243, 255, 0.15) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Premium */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:active, .glass-card:hover {
+            border-color: var(--neon-blue);
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-2px);
+        }
+
+        /* Botón Principal */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-violet), #00d4ff);
+            box-shadow: 0 0 15px rgba(157, 0, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.6);
+            transform: scale(1.02);
+        }
+
+        /* Texto Gradiente */
+        .text-gradient {
+            background: linear-gradient(to right, #fff, var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .text-gradient-logo {
+            background: linear-gradient(to right, var(--neon-blue), var(--neon-violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Badge Google */
+        .google-badge {
+            background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            padding: 2px;
+            border-radius: 999px;
+        }
+        .google-badge-inner {
+            background: #000;
+            border-radius: 999px;
+            padding: 4px 12px;
+        }
+
+        /* Scroll suave */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar Flotante (Glass) -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b-0 border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-tighter">
+                <span class="text-gradient-logo">PV</span> <span class="text-xs font-normal text-gray-400 ml-1 hidden sm:inline">Programación Venustiano</span>
+            </a>
+            <div class="flex gap-4">
+                <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-pink-500 transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#contacto" class="text-sm font-bold bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition">
+                    Contacto
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Mobile-First -->
+    <header class="relative pt-32 pb-16 px-6 text-center max-w-4xl mx-auto">
+        
+        <!-- Badge Local -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-cyan-900/30 border border-cyan-500/30 text-cyan-300 text-xs font-bold tracking-wider uppercase">
+            <i class="fa-solid fa-location-dot"></i> Venustiano Carranza, CDMX
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-none">
+            Tu Negocio en <br>
+            <span class="text-gradient-logo">El Siguiente Nivel</span>
+        </h1>
+        
+        <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+            Soy <b>Luis Rodrigo</b>. Digitalizo negocios locales con sitios web que <b>sí venden</b>. Sin complicaciones, directo a tu celular.
+        </p>
+
+        <div class="flex flex-col gap-4 max-w-xs mx-auto">
+            <a href="#paquetes" class="btn-primary text-white font-bold py-4 px-8 rounded-xl text-lg flex items-center justify-center gap-2">
+                Ver Paquetes <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <a href="#portafolio" class="glass-card text-gray-300 font-semibold py-4 px-8 rounded-xl text-lg hover:text-white">
+                Ver mis trabajos
+            </a>
+        </div>
+    </header>
+
+    <!-- Sección Sobre Mí (Credibilidad) -->
+    <section class="px-6 py-12">
+        <div class="max-w-4xl mx-auto glass-panel rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <!-- Avatar Placeholder (Puedes poner tu foto real aquí) -->
+            <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-cyan-500 to-purple-600 p-[2px] flex-shrink-0">
+                <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-3xl overflow-hidden">
+                    <!-- Puedes reemplazar este emoji con tu foto real -->
+                    👨‍💻
+                </div>
+            </div>
+            
+            <div class="text-center md:text-left flex-1">
+                <div class="inline-block google-badge mb-2">
+                    <div class="google-badge-inner text-xs font-bold text-white flex items-center gap-2">
+                        <i class="fa-brands fa-google"></i> UX Designer Certified
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Diseño Profesional, Trato Vecinal</h2>
+                <p class="text-gray-400 text-sm md:text-base">
+                    No soy una agencia lejana. Soy <b>Luis Rodrigo</b>, tu vecino en la Venustiano, certificado por Google en Diseño de Experiencia de Usuario. Entiendo lo que tu negocio necesita porque vivo aquí.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio (Proyectos Reales) -->
+    <section id="portafolio" class="px-6 py-12 max-w-6xl mx-auto">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl font-bold text-gradient">Trabajos Recientes</h2>
+            <i class="fa-solid fa-laptop-code text-gray-500"></i>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Proyecto 1: Nexus -->
+            <div class="glass-card rounded-2xl overflow-hidden group">
+                <div class="h-48 bg-gray-800 relative overflow-hidden">
+                    <!-- Imagen de Nexus (Uso un placeholder estilizado, puedes poner tu captura real aquí) -->
+                    <img src="https://placehold.co/800x500/1e1b4b/00f3ff?text=NEXUS+PROJECT" alt="Nexus Project Preview" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1">Proyecto Nexus</h3>
+                    <p class="text-sm text-gray-400 mb-4">Plataforma de servicios digitales.</p>
+                    <a href="https://unitegroupteam.github.io/nexus/" target="_blank" class="text-cyan-400 text-sm font-bold hover:text-white flex items-center gap-2">
+                        Visitar sitio <i class="fa-solid fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Proyecto 2: Q-Zenith -->
+            <div class="glass-card rounded-2xl overflow-hidden group">
+                <div class="h-48 bg-gray-800 relative overflow-hidden">
+                     <!-- Imagen de Q-Zenith -->
+                     <img src="https://placehold.co/800x500/0f2e20/4ade80?text=Q-ZENITH" alt="Q-Zenith Project Preview" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1">Q-Zenith</h3>
+                    <p class="text-sm text-gray-400 mb-4">Landing page corporativa moderna.</p>
+                    <a href="https://unitegroupteam.github.io/q-zenith/" target="_blank" class="text-cyan-400 text-sm font-bold hover:text-white flex items-center gap-2">
+                        Visitar sitio <i class="fa-solid fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Extra (Diseño Gráfico / Flyers) -->
+    <section class="px-6 py-8">
+        <div class="max-w-6xl mx-auto rounded-3xl p-1 bg-gradient-to-r from-orange-500 to-red-600">
+            <div class="bg-gray-900 rounded-[22px] p-6 md:p-8 flex flex-col md:flex-row items-center gap-8">
+                
+                <!-- Imagen de Ejemplo (Proporcionada por el usuario) -->
+                <div class="w-full md:w-1/3 relative rounded-xl overflow-hidden shadow-2xl border border-white/10 group">
+                    <img src="https://imgur.com/RqG6ZPn.png" alt="Ejemplo Diseño Gráfico" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-2 left-2 bg-black/70 px-2 py-1 rounded text-[10px] text-white font-bold">
+                        EJEMPLO REAL
+                    </div>
+                </div>
+
+                <div class="text-center md:text-left flex-1">
+                    <div class="inline-block bg-orange-500/20 text-orange-400 text-xs font-bold px-3 py-1 rounded-full mb-3">
+                        SERVICIO ADICIONAL
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Diseño Gráfico Publicitario</h3>
+                    <p class="text-gray-400 text-sm mb-6">
+                        ¿Lanzaste un producto nuevo? No uses plantillas genéricas. Diseñamos <b>imágenes promocionales y flyers</b> profesionales para tus redes sociales (Instagram/Facebook) que captan la atención al instante.
+                    </p>
+                    <a href="https://wa.me/525543508612?text=Hola%20Luis%20Rodrigo,%20vi%20tu%20ejemplo%20de%20diseño%20y%20me%20interesa%20para%20mis%20productos" class="whitespace-nowrap bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-xl transition shadow-lg shadow-orange-500/20 inline-flex items-center gap-2">
+                        Cotizar Diseños <i class="fa-solid fa-palette"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section id="paquetes" class="px-6 py-16 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4">Paquetes Disponibles</h2>
+        <p class="text-gray-400 text-center text-sm mb-12">Precios únicos. Sin rentas mensuales ocultas.</p>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            
+            <!-- Básico -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col">
+                <h3 class="text-lg font-semibold text-gray-400">Tarjeta Digital</h3>
+                <div class="text-3xl font-bold text-white my-2">$350</div>
+                <p class="text-xs text-gray-500 mb-6">Ideal para servicios personales.</p>
+                <ul class="text-sm text-gray-300 space-y-3 mb-8 flex-1">
+                    <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Link único para Bio</li>
+                    <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Botones de Contacto</li>
+                    <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Foto + QR</li>
+                </ul>
+                <a href="https://wa.me/525543508612?text=Hola%20PV,%20quiero%20el%20paquete%20Básico" class="w-full py-3 rounded-lg border border-gray-700 text-center hover:bg-white/10 transition font-semibold text-sm">
+                    Lo quiero
+                </a>
+            </div>
+
+            <!-- Estándar (Destacado) -->
+            <div class="glass-card rounded-2xl p-6 border-cyan-500/50 shadow-[0_0_20px_rgba(0,243,255,0.1)] relative">
+                <div class="absolute top-0 right-0 bg-cyan-500 text-black text-[10px] font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">
+                    POPULAR
+                </div>
+                <h3 class="text-lg font-bold text-white">Menú QR Pro</h3>
+                <div class="text-4xl font-bold text-cyan-400 my-2">$750</div>
+                <p class="text-xs text-gray-400 mb-6">Perfecto para comida y snacks.</p>
+                <ul class="text-sm text-gray-200 space-y-3 mb-8">
+                    <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> <strong>Menú Interactivo</strong></li>
+                    <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Fotos de productos</li>
+                    <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Carga Rápida</li>
+                    <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Diseño UX Certificado</li>
+                </ul>
+                <a href="https://wa.me/525543508612?text=Hola%20PV,%20me%20interesa%20el%20Menú%20QR%20Pro" class="btn-primary block w-full py-3 rounded-lg text-center font-bold text-white shadow-lg">
+                    Pedir Ahora
+                </a>
+            </div>
+
+            <!-- Premium -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col">
+                <h3 class="text-lg font-semibold text-gray-400">Negocio Total</h3>
+                <div class="text-3xl font-bold text-white my-2">$1,200</div>
+                <p class="text-xs text-gray-500 mb-6">Para restaurantes establecidos.</p>
+                <ul class="text-sm text-gray-300 space-y-3 mb-8 flex-1">
+                    <li><i class="fa-solid fa-check text-purple-400 mr-2"></i> Todo lo del QR Pro</li>
+                    <li><i class="fa-solid fa-check text-purple-400 mr-2"></i> Catálogo WhatsApp Business</li>
+                    <li><i class="fa-solid fa-check text-purple-400 mr-2"></i> Asesoría de Lanzamiento</li>
+                </ul>
+                <a href="https://wa.me/525543508612?text=Hola%20PV,%20quiero%20el%20paquete%20Premium" class="w-full py-3 rounded-lg border border-gray-700 text-center hover:bg-white/10 transition font-semibold text-sm">
+                    Contactar
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="border-t border-gray-800 bg-black/60 pt-12 pb-8 text-center px-6">
+        <h2 class="text-2xl font-bold mb-6">Empecemos hoy mismo</h2>
+        <div class="flex justify-center gap-6 mb-8">
+            <a href="https://wa.me/525543508612" class="w-14 h-14 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-2xl hover:scale-110 transition border border-green-500/30">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="w-14 h-14 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-400 text-2xl hover:scale-110 transition border border-pink-500/30">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <p class="text-gray-500 text-xs">
+            &copy; 2024 PV | Programación Venustiano.<br>
+            Desarrollado con pasión por Luis Rodrigo en la CDMX.
+        </p>
+    </footer>
+
+</body>
+</html>
